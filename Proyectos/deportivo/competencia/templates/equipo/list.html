@@ -1,0 +1,30 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+    {% load static %}
+    <div class="text-right mt-3">
+        <a href="javascript:history.back();" class="btn btn-warning">
+            <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+            Regresar
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for l in teams %}
+                <div class="col-sm-4 col-md-3 p-3 text-center">
+                    <div class="card shadow" style="width: 100%; min-height: 100%;">
+                        {% if l.team_badge %}
+                            <img src="{{ l.team_badge }}" class="card-img-top" alt="...">
+                        {% else %}
+                            <img src="{% static 'images/Imagen_no_disponible.svg.png' %}" class="card-img-top" alt="Sin Fotografía">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ l.team_name }}</h5>
+                            <a href="{% url 'jugadores' l.team_key %}" class="btn btn-dark btn-sm">VER JUGADORES</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

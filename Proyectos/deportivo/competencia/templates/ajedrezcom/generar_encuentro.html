@@ -1,0 +1,31 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+    {% load static %}
+    <div class="container">
+        <div class="text-right mt-3">
+            <a href="javascript:history.back();" class="btn btn-warning">
+                <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+                Regresar
+            </a>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6 text-center mx-auto">
+                <h1>Generar Encuentro</h1>
+                <form method="post" class="mx-auto">
+                    {% csrf_token %}
+                    <table class="table w-100">
+                        {{ form.as_table }}
+                    </table>
+                    <br/>
+                    <input type="submit" class="btn btn-dark" value="Generar Encuentro">
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+            <a href="{% url 'form_jugador' %}" class="btn btn-dark">¿Desea inscribir otro jugador?</a>
+        </div>
+{% endblock %}

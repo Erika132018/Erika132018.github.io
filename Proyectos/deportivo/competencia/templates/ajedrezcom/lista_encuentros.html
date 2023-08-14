@@ -1,0 +1,56 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+    {% load static %}
+    <div class="container text-center">
+        <div class="text-right mt-3">
+            <a href="javascript:history.back();" class="btn btn-warning">
+                <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+                Regresar
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'form_jugador' %}" class="btn btn-dark">¿Desea inscribir otro jugador?</a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <br>
+                <h1>Lista de Encuentros Ajedrez</h1>
+                <a href="{% url 'generar_encuentros' %}" class="btn btn-dark">Generar Encuentros</a><br/><br/>
+                {% if not encuentros %}
+                    <span>No hay encuentros registrados</span>
+                {% endif %}
+                <div class="row justify-content-center">
+                    {% for e in encuentros %}
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span class="h4">{{ e.jugador1.nombre }} {{ e.jugador1.apellido }} <b>vs</b> {{ e.jugador2.nombre }} {{ e.jugador2.apellido }}</span><br/>
+                                    Fecha: {{ e.fecha }}<br/>
+                                    Hora: {{ e.hora }}
+                                </div>
+                                <div class="card-footer">
+                                    <a href="{% url 'encuentro_detail' e.id %}" class="btn btn-dark">Ver detalle</a>
+                                    {% if e.encuentro.estado == 'INICIADO' or 'FINALIZADO'%}
+                                        <a href="{% url 'registrar_marcadorAjedrez' e.id %}" class="btn btn-dark">Registrar
+                                            Marcador</a>
+                                        <a href="{% url 'encuentro_editar' e.id %}" class="btn btn-dark">Finalizar</a>
+                                    {% endif %}
+                                    <a href="{% url 'delete_encuentro' e.id %}" class="btn btn-danger">Eliminar</a>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+<br>
+<br>
+<br>
+        <a href="{% url 'ajedrez' %}" class="btn btn-dark">Volver a la lista de jugadores y Tabla de Posiciones</a>
+        </div>
+</div>
+{% endblock %}

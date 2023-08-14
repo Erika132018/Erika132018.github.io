@@ -1,0 +1,43 @@
+{% extends "home/dashboard.html" %}
+
+{% block contenido %}
+    {% load static %}
+    <div class="container mt-4">
+        <div class="row justify-content-end">
+            <div class="col-md-2">
+                <a href="javascript:history.back();" class="btn btn-warning btn-sm">
+                    <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+                    Regresar
+                </a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">INSCRIBIR JUGADORES</h1>
+                <form method="POST" action="{% url 'form_jugador' %}" enctype="multipart/form-data">
+                    <!-- Security token -->
+                    {% csrf_token %}
+
+                    <div class="table-responsive">
+                        <table class="table">
+                            {{ form.as_table }}
+                        </table>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-dark btn-block mt-3">GUARDAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% if messages %}
+        <div class="alert alert-success mt-3">
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

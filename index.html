@@ -7,83 +7,258 @@
     <title>Competencias Deportivas</title>
     <link rel="shortcut icon" href="img/pngtree-blue-green-diamond-gems-illustration-image_1405724.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/estilos.css">
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: 'open sans';
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenedor {
+            padding: 60px 0;
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        /* Estilos para los objetivos */
+        .objetivos {
+            background-color:#000000;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .objetivos .titulo {
+            color: #0e9292;
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .objetivos .contenedor-objetivos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .objetivos .contenedor-imagenes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .objetivos .contenido-textos {
+            max-width: 400px;
+            text-align: center;
+        }
+
+
+        .contenedor-objetivos {
+            flex-wrap: wrap;
+        }
+
+        .contenido-textos {
+            text-align: center;
+        }
+
+        .objetivos.contenido-textos {
+            width: auto;
+        }
+        .container {
+            flex-direction: column;
+        }
+
+        .contenedor-objetivos {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .imagen-about-us {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .contenido-textos {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .rainbow {
+            background-color: #ffd700	;
+            border-radius: 4px;
+            color: #fff	;
+            cursor: pointer;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .rainbow-1:hover {
+            background-image: linear-gradient(90deg, #FFCF00 0%, #F68B1D 49%, #e4b7b7 80%, #f6d21e 100%);
+            animation: slidebg 8s linear infinite;
+        }
+        
+        @keyframes slidebg {
+            to {
+                background-position: 20vw;
+            }
+        }
+        .nombre-imagen {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            color: white;
+        }
+        
+    </style>
 </head>
 <body>
-   <header>
-      <nav>
-        <a href="img/proyecto_page-0001.jpg" hrf="#"> DIAGRAMA DE CLASES </a>
-      </nav>
+    <header>
+        <body>
+            <div class="container text-center">
+              <h1 class=""> CompetUni
+              <a class="rainbow rainbow-1" href="img/diagramaactual.jpg" hrf="##ff8c00">DIAGRAMA UML</a>
+                <div class="follow">
         <section class="textos-header">
+            
             <h1>COMPETENCIAS DEPORTIVAS</h1>
             <h2>Futbol y Ajedrez</h2>
-         <section>   
-          
-         <div class= "wave"style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-6.20,33.06 C149.99,150.00 344.24,-12.31 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>  
-   </header> 
-   <main>
-    <section class="contenedor objetivos">
-       <h2 class="titulo">OBJETIVOS</h2>
-       <div class="contenedor-objetivos"></div>
-            <img src="img/portada.jpg" alt="" class="imagen-about-us">
-            <img src="img/p1.jpg" alt=""  class= "imagen-about-us">
-          <div class="contenido-textos">
-              <br>
-             <h3><span>1 </span>Permitir al usuario conocer y estar informado acerca de las competencias de futbol y Ajedrez</h3>
-             <h3><span>2 </span>Dejar que el usuario interactue y sea participe del sistema </h3>
-            <h3><span>3</span>Permitir que el usuario genere sus encuentros por grupos o individual en caso de Ajedrez</h3>
-           </div>
-       </div>
-    </section>
-    <section class="historia">
-        <div class="contenedor">
-            <h2 class="titulo"> CODIGO JAVA </h2>
-            <a href="https://github.com/Erika132018/Erika132018.github.io/tree/model/ProyectoDeporte/src/modelo" class="navbar-brand h2 p-0">CODIGO JAVA</a><br/>
+        </section>
+        
+        <div class="wave" style="height: 150px; overflow: hidden;">
+                <path d="M-6.20,33.06 C149.99,150.00 344.24,-12.31 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path>
+            </svg>
+        </div>
+    </header>
+    <main>
+        <section class="objetivos">
+            <div class="contenedor-objetivos">
+                <div class="contenedor-imagenes">
+                    <img src="img/portada.jpg" alt="" class="imagen-about-us">
+                    <img src="img/p1.jpg" alt="" class="imagen-about-us">
+                </div>
+                <div class="contenido-textos">
+                    <h2 class="titulo">OBJETIVOS</h2>
+                    <h3><span>1. </span>Permitir al usuario conocer y estar informado acerca de las competencias de fútbol y Ajedrez</h3>
+                    <br>
+                    <h3><span>2. </span>Dejar que el usuario interactúe y sea partícipe del sistema</h3>
+                    <br>
+                    <h3><span>3. </span>Permitir que el usuario genere sus encuentros por grupos o individual en caso de Ajedrez</h3>
                 </div>
             </div>
-          <div class="contenedor">
-            <h2 class="titulo"> CODIGO PYTHON </h2>
-            <a href="http://127.0.0.1:8000/" class="navbar-brand h2 p-0">PYTHON</a><br/>
-                </div>
-        </div>
-    </section>
-    
-    <section class="portafolio">
-        <h2 class="titulo"> ACERCA DE NOSOTROS </h2>
-        <div class="contenedor-galeria">
-            
-            <a href="https://github.com/Erika132018" target="_blank">
-                  <img src="img/Erika.jpeg" alt="" class="imagen">
-                 
-            </a>
-                <a href="https://github.com/mariuxi04" target="_blank">
-                       <img src="img/maru.jpeg" alt="" class="imagen">
-                </a> 
-                
-                <a href="https://github.com/E2002-debug" target="_blank">
-                    <img src="img/1150685905.jpg" alt="" class="imagen">
+        </section>
+        <section class="historia">
+            <div class="contenedor">
+                <h2 class="titulo"> CODIGO JAVA </h2>
+                <a href="https://github.com/Erika132018/Erika132018.github.io/tree/model/ProyectoDeporte/src/modelo" class="enlace-imagen">
+                    <img src="img/javas.png" alt="Java" class="imagen-about-us">
                 </a>
-                <a href="https://github.com/KerlyHS" target="_blank">      
-                    <img src="img/e66c3155-88e5-4c9e-8ea8-1ba399fb0c20.jpg" alt="" class="imagen">
+                <h2 class="titulo"> CODIGO PYTHON</h2>
+                <a href="http://127.0.0.1:8000/" class="enlace-imagen">
+                    <img src="img/pythons.png" alt="Python" class="imagen-about-us-grande">
                 </a>
-
-                
+            </div>
+        </section>
+        <!-- Sección "ACERCA DE NOSOTROS" a completar -->
+        <section class="container">
+            <h2 class="titulo">Quiénes Somos</h2>
+            <div class="contenido-textos">
                         
-        </div>
-    </section>
-   </main>
-   <footer>
-    <div class="contenedor-footer">
-        <div class="content-foo">
-            <h4>GRACIAS POR VISITAR NUESTRA PAGINA</h4>
-            <br>
-            <h4>CREDITOS</h4>
-            <p>Creado con la ayuda de <a href="https://openai.com/" target="_blank">ChatGPT</a> y <a href="https://github.com/openai/copilot" target="_blank">GitHub Copilot</a></p>
-            <p>Utiliza el framework <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> para el diseño</p>
-            
-        </div>
-    </div>
+                <h2>Nuestra Historia</h2>
+                <p>Somos un grupo apasionado de estudiantes pertenecientes a la Universidad Nacional de Loja (UNL), comprometidos en llevar adelante un proyecto innovador en el campo de las competencias deportivas a través de soluciones tecnológicas.</p>
+                <br>
+                <h2>Nuestro Equipo</h2>
+                <p>Nuestro equipo está compuesto por estudiantes con sólidos conocimientos en programación, desarrollo de software, diseño de interfaces y análisis de datos. La diversidad de habilidades y enfoques enriquece nuestra capacidad para crear soluciones tecnológicas innovadoras que aborden las necesidades específicas de las competencias deportivas, tanto en el ámbito del ajedrez como del fútbol y otros deportes que busquemos abordar en el futuro.</p>
+                <br>
+                <h2>Nuestra Misión</h2>
+                <p>Como futuros profesionales de la Ingeniería en Sistemas y Ciencias de la Computación, nuestra misión es aplicar nuestros conocimientos y habilidades técnicas para impulsar la excelencia en las competencias deportivas. Buscamos crear una plataforma integral que facilite la organización, participación y seguimiento de las competencias, al tiempo que promovemos los valores deportivos y la colaboración entre los estudiantes y atletas.</p>
+                <br>
+                <h2>Nuestra Visión</h2>
+                <p>Nuestra visión es convertirnos en líderes reconocidos en la convergencia entre tecnología y deporte en el entorno universitario y más allá. Aspiramos a que nuestra plataforma sea la preferida por los estudiantes, profesores y entusiastas del deporte para todas sus necesidades relacionadas con competencias deportivas. A medida que avanzamos en nuestra formación académica y profesional, nos esforzamos por contribuir activamente al desarrollo de soluciones tecnológicas avanzadas que promuevan un estilo de vida saludable y activo.</p>
+                <br>
+                    </section>
+                    <section class="contenedor-galeria">
+                        <div class="nombre-imagen">Erika C</div>
+                        <a href="https://github.com/Erika132018" target="_blank" class="enlace-imagen">
+                            <img src="img/Erika.jpeg" alt="Erika" class="imagen">
+                        </a>
+                        <div class="nombre-imagen">Mariuxi V</div>
+                        <a href="https://github.com/mariuxi04" target="_blank" class="enlace-imagen">
+                            <img src="img/maru.jpeg" alt="Maru" class="imagen">
+                        </a>
+                        <div class="nombre-imagen">Estefania C</div>
+                        <a href="https://github.com/E2002-debug" target="_blank" class="enlace-imagen">
+                            <img src="img/1150685905.jpg" alt="E2002" class="imagen">
+                        </a>
+                        <div class="nombre-imagen">Kerly H</div>
+                        <a href="https://github.com/KerlyHS" target="_blank" class="enlace-imagen">
+                            <img src="img/e66c3155-88e5-4c9e-8ea8-1ba399fb0c20.jpg" alt="Kerly" class="imagen">
+                        </a>
+                    </section>
+                    
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+              <h4>CREDITOS</h4>
+              <p>Creado con la ayuda de <a href="https://openai.com/" target="_blank">ChatGPT</a> y <a href="https://github.com/openai/copilot" target="_blank">GitHub Copilot</a></p>
+              <p>Utiliza el framework <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> para el diseño</p>
+                <p>Utiliza un repositorio <a href="https://github.com/miguelromeral/Ajedrez/tree/master/dist" target="_blank">Miguel Romeral</a> para el juego de Ajedrez</p>
+                <br>
+                <h4>GRACIAS POR VISITAR NUESTRA PAGINA</h4>
 
-    <h2 class="titulo-final">&copy; COMPETENCIAS DEPORTIVAS | 2023</h2>
-   </footer>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; COMPETENCIAS DEPORTIVAS | 2023</h2>
+    </footer>
 </body>
 </html>

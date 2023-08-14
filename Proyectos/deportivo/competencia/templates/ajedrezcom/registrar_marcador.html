@@ -1,0 +1,34 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+{% load static %}
+    <style>
+        .jugador-nombre {
+            font-size: 20px; /* Tamaño de fuente deseado */
+            font-weight: bold; /* Opcional: para hacer el nombre más audaz */
+        }
+        .jugador{
+            font-size: 20px; /* Tamaño de fuente deseado */
+            font-weight: bold; /* Opcional: para hacer el nombre más audaz */
+        }
+    </style>
+    <div class="container">
+        <div class="text-right mt-3">
+            <a href="javascript:history.back();" class="btn btn-warning">
+                <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+                Regresar
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Registrar Marcador para el Encuentro</h1>
+                <p class="jugador">Jugadores: <span class="jugador-nombre">{{ encuentro.jugador1.nombre }} {{encuentro.jugador1.apellido}}</span> vs <span class="jugador-nombre">{{ encuentro.jugador2.nombre }} {{ encuentro.jugador2.apellido }}</span></p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {{ competencia }}
+                    <button type="submit" class="btn btn-dark btn-block">Registrar Marcador</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

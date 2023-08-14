@@ -1,0 +1,71 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+    {% load static %}
+    <div class="text-right mt-3">
+        <a href="javascript:history.back();" class="btn btn-warning">
+            <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+            Regresar
+        </a>
+    </div>
+
+    <div class="container">
+        <form action="" method="post" class="from-group">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-9">
+                    <input type="text" class="form-control" name="num_grupo" value="{{ num_grupo }}" placeholder="Ingrese un número">
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-dark btn-block">GENERAR GRUPOS</button>
+                </div>
+            </div>
+        </form>
+        <br/>
+        <table class="table text-center">
+            <thead>
+            <tr class="bg-dark">
+                <th class="text-light">
+                    GRUPOS
+                </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for grupo in encuentros.grupos %}
+                <tr>
+                    <td>
+                        <div>
+                            <h2>GRUPO {{ forloop.counter }}</h2>
+                            {% for e in grupo.grupo %}
+                                <button type="button" class="btn btn-warning">
+                                    {{ e }}
+                                </button>
+                            {% endfor %}
+                            <hr/>
+
+                        </div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                {% for p in grupo.partidos %}
+                                    <div class="col-sm-6 col-md-4 pb-2">
+                                        <div class="card text-center">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Encuento {{ forloop.counter }}</h5>
+                                                {{ p.equipo_local }} vs {{ p.equipo_visitante }} <br/>
+                                                {{ p.fecha }} <br/>
+                                                {{ p.lugar }} <br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

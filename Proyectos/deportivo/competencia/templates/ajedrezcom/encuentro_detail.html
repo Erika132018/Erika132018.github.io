@@ -1,0 +1,28 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+    {% load static %}
+    <div class="text-right mt-3">
+        <a href="javascript:history.back();" class="btn btn-warning">
+            <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+            Regresar
+        </a>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg">
+                    <div class="card-body">
+                        <h1 class="card-title text-center mb-4">Detalles del Encuentro</h1>
+                        <p class="card-text"><strong>Jugador 1:</strong> {{ encuentro.jugador1.nombre }}</p>
+                        <p class="card-text"><strong>Jugador 2:</strong> {{ encuentro.jugador2.nombre }}</p>
+                        <p class="card-text"><strong>Fecha:</strong> {{ encuentro.fecha }}</p>
+                        <p class="card-text"><strong>Hora:</strong> {{ encuentro.hora }}</p>
+                        <p class="card-text"><strong>Lugar:</strong> {{ encuentro.lugar }}</p>
+                        <p class="card-text"><strong>Estado del Encuentro:</strong> {{ encuentro.estado }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

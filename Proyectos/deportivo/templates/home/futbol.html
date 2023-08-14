@@ -1,0 +1,33 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+    {% load static %}
+    <div class="text-right mt-3">
+        <a href="javascript:history.back();" class="btn btn-warning">
+            <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+            Regresar
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        <div class="col-12 text-center mb-4">
+                <img src="{% static 'images/encabezado2.jpg' %}" alt="Encabezado" class="img-fluid" style="max-width: 30%;">
+            </div>
+        <br>
+        <br>
+            {% for c in countries %}
+                <div class="col-sm-4 col-md-2 p-3 text-center">
+                    <div class="card shadow" style="width: 100%;min-height: 100%">
+                        <img src="{{ c.country_logo }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <label class="card-title">{{ c.country_name }}</label>
+                            <a href="{% url 'ligas' c.country_id %}" class="btn btn-dark btn-sm">VER COMPETENCIAS</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}

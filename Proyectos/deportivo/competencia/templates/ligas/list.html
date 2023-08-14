@@ -1,0 +1,28 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+    {% load static %}
+    <div class="text-right mt-3">
+        <a href="javascript:history.back();" class="btn btn-warning">
+            <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+            Regresar
+        </a>
+    </div>
+
+       <div class="container">
+            <div class="row">
+                {% for l in leagues %}
+                   <div class="col-sm-4 col-md-3 p-3 text-center">
+                    <div class="card shadow" style="width: 100%;min-height: 100%">
+                            <img src="{{ l.league_logo }}" width="75" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ l.league_name }}</h5>
+                                <p class="card-text">{{ l.league_season }}</p>
+                                <a href="{% url 'equipos' l.league_id %}" class="btn btn-dark btn-sm m-1">VER EQUIPOS</a>
+                                <a href="{% url 'encuentros' l.league_id %}" class="btn btn-success btn-sm m-1">VER ENCUENTROS</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'home/dashboard.html' %}
+{% load static %}
+
+{% block contenido %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-right mt-3">
+                    <a href="javascript:history.back();" class="btn btn-warning">
+                        <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+                        Regresar
+                    </a>
+                </div>
+                <div class="encabezado">
+                    <img src="{% static 'images/encabezado.jpg' %}" alt="Encabezado" class="img-fluid" style="max-width: 300px;">
+                </div>
+                 <br/>
+            <div class="row-justify-contener-center">
+            </div>
+                <h1 class="mt-4">Lista de Jugadores Ajedrez</h1>
+                {% if not jugadores %}
+                    <span>No hay jugadores registrados</span>
+                {% endif %}
+                <div class="row justify-content-center">
+                    {% for jugador in jugadores %}
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span class="h4"><b>{{ jugador.nombre }} {{ jugador.apellido }}</b></span><br/>
+                                    C.I: {{ jugador.dni }}<br/>
+                                    {{ jugador.direccion }}
+                                </div>
+                                <div class="card-footer">
+                                    <a href="{% url 'delete_jugador' jugador.id %}" class="btn btn-danger">Eliminar</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <br/>
+                <a href="{% url 'form_jugador' %}" class="btn btn-dark">Registrar Jugador</a>
+                <a href="{% url 'lista_encuentros' %}" class="btn btn-dark">Ver Encuentros</a><br/><br/>
+                <br/>
+                <br>
+                <br>
+                <div class="row" id="tabla">
+                    <div class="col-md-12 text-center">
+                        <h2 class="mt-4">TABLA DE POSICIONES</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">JUGADOR</th>
+                                        <th scope="col">PUNTOS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for p in tabla_posiciones %}
+                                        <tr>
+                                            <td>{{ p.jugador }}</td>
+                                            <td>{{ p.puntos }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

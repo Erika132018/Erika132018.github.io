@@ -1,0 +1,33 @@
+{% extends 'home/dashboard.html' %}
+{% block contenido %}
+    {% load static %}
+    <div class="text-right mt-3">
+        <a href="javascript:history.back();" class="btn btn-warning">
+            <img src="{% static 'images/flecha.png' %}" alt="Flecha Regresar" class="mr-2" width="20">
+            Regresar
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for t in team %}
+                {% for p in t.players %}
+                    <div class="col-sm-4 col-md-2 p-3 text-center">
+                        <div class="card shadow" style="width: 100%; min-height: 100%;">
+                            {% if p.player_image %}
+                                <img src="{{ p.player_image }}" class="card-img-top" alt="...">
+                            {% else %}
+                                <img src="{% static 'images/Imagen_no_disponible.svg.png' %}" class="card-img-top" alt="Sin Fotografía">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre : {{ p.player_name }}</h5>
+                                <h5 class="text-muted">Edad : {{ p.player_age }} años</h5>
+                                <h5 class="text-muted">N.Camiseta : {{ p.player_number }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

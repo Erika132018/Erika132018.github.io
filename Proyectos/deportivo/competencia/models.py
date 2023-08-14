@@ -189,6 +189,7 @@ class MarcadorAjedrez(models.Model):
 class TablaPocisionesFutbol(models.Model):
     equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='equipo_tabla')
     competencia = models.ForeignKey(Competencia, on_delete=models.CASCADE, related_name='competencia_tabla_futbol')
+    marcador= models.ForeignKey(MarcadorFutbol, on_delete=models.CASCADE, related_name='marcador_tabla_futbol')
     puntos = models.IntegerField(default=0)
     partidos_jugados = models.IntegerField(default=1)
     partidos_ganados = models.IntegerField(default=0)
@@ -210,6 +211,7 @@ class TablaPocisionesAjedrez(models.Model):
     competencia = models.ForeignKey(Competencia, on_delete=models.CASCADE, related_name='competencia_tabla_ajedrez')
     puntos = models.IntegerField(default=1)
     partidas_jugadas = models.IntegerField(default=1)
+    marcador= models.ForeignKey(MarcadorAjedrez, on_delete=models.CASCADE, related_name='marcador_tabla_ajedrez')
 
     def __str__(self):
         return f'Jugador {self.jugador.nombre} en la competencia {self.competencia}'
